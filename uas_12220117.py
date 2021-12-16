@@ -58,12 +58,12 @@ with body:
 
     # Fitur 1
     st.title("1) Produksi Minyak Mentah per Negara")
-    st.write(f"Visualisasi produksi minyak mentah untuk negara {negara}")
+    st.write(f"Visualisasi produksi minyak mentah untuk Negara {negara}")
     fig, ax = plt.subplots()
     prod = df[df['nama_negara']==negara]['produksi']
     tahun_plot = df[df['nama_negara']==negara]['tahun']
     ax.plot(tahun_plot, prod)
-    ax.set_title(f"Produksi minyak per tahun negara {negara}")
+    ax.set_title(f"Produksi Minyak per Tahun Negara {negara}")
     ax.set_ylabel('Produksi Minyak')
     ax.set_xlabel("Tahun")
     fig.set_size_inches(10, 5, forward=True)   
@@ -79,8 +79,8 @@ with body:
     colors = cmap.colors[:jml_negara2]
     fig2, ax = plt.subplots()
     ax.barh(df3['nama_negara'],df3['produksi'], color=colors)
-    ax.set_title(f'{jml_negara2} negara dengan produksi minyak mentah terbesar pada tahun {tahun}')
-    ax.set_xlabel(f"Produksi Minyak pada tahun {tahun}")
+    ax.set_title(f'{jml_negara2} Negara dengan Produksi Minyak Mentah Terbesar pada Tahun {tahun}')
+    ax.set_xlabel(f"Produksi Minyak pada Tahun {tahun}")
     fig2.set_size_inches(10, 5, forward=True)   
     body.pyplot(fig2)
 
@@ -114,7 +114,7 @@ with body:
                 'produksi_kumulatif':'Produksi Kumulatif'}
     ranking_kumul = ranking_kumul.rename(columns=renaming)
     
-    right_col.write("Negara dengan produksi minyak kumulatif terbesar dan terkecil")
+    right_col.write("Negara dengan Produksi Minyak Kumulatif Terbesar dan Terkecil")
     right_col.dataframe(ranking_kumul)
 
     produksi_nol = produksi_kumul[produksi_kumul['produksi_kumulatif']==0]
@@ -127,7 +127,7 @@ with body:
                 'sub-region' : 'Sub Region',}
     produksi_nol = produksi_nol.rename(columns=renaming1)
     right_col.write("    ")
-    right_col.write('Negara yang tidak memproduksi minyak pada tahun 1971-2015')
+    right_col.write('Negara yang Tidak Memproduksi Minyak pada Tahun 1971-2015')
     right_col.dataframe(produksi_nol)
 
 
@@ -145,7 +145,7 @@ with body:
                 'produksi':'Produksi'}
     rank_tahun = rank_tahun.rename(columns=renaming2)
 
-    left_col.write(f"Negara dengan produksi minyak kumulatif terbesar dan terkecil pada tahun {tahun1}")
+    left_col.write(f"Negara dengan Produksi Minyak Terbesar dan Terkecil pada Tahun {tahun1}")
     left_col.dataframe(rank_tahun)
 
 
@@ -154,5 +154,5 @@ with body:
     rank_nol = rank_nol.rename(columns=renaming)
 
     left_col.write("    ")
-    left_col.write(f"Negara yang tidak memproduksi minyak pada tahun {tahun1}")
+    left_col.write(f"Negara yang Tidak Memproduksi Minyak pada Tahun {tahun1}")
     left_col.dataframe(rank_nol)
