@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 
 
-df = pd.read_csv('D://minyak bersih1.csv')
+df = pd.read_csv('minyak bersih1.csv')
 
 st.set_page_config(layout="wide")
 
